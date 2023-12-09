@@ -1,0 +1,8 @@
+.cursorPencil{
+    cursor: crosshair;
+}
+.cursorEarser{
+    cursor: url("https://img.icons8.com/ios-glyphs/30/eraser.png"),auto;
+    z-index: 100;
+    /* cursor: all-scroll; */
+}
