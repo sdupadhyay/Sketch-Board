@@ -14,6 +14,7 @@ const Menu = () => {
       title: "DOWNLOAD",
       image: "https://img.icons8.com/ios/50/download--v1.png",
     },
+    { title: "DELETE", image: "https://img.icons8.com/windows/32/trash.png" },
   ];
   const handleMenueClick = (item, ind) => {
     //console.log(item)

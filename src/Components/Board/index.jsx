@@ -38,6 +38,9 @@ const Board = () => {
       const imageData = drawHistory.current[historyPointer.current];
       context.putImageData(imageData, 0, 0);
     }
+     else if (actionMenuItem === MENU_ITEMS.DELETE){
+      context.clearRect(0, 0, canvas.width, canvas.height);
+    }
 
     dispatch(actionItemClick(null));
   }, [actionMenuItem, dispatch]);
