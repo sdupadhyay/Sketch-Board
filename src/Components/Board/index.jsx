@@ -28,17 +28,18 @@ const Board = () => {
       actionMenuItem === MENU_ITEMS.UNDO ||
       actionMenuItem === MENU_ITEMS.REDO
     ) {
-      if (historyPointer.current > 0 && actionMenuItem === MENU_ITEMS.UNDO)
+      if (historyPointer.current > 0 && actionMenuItem === MENU_ITEMS.UNDO  && drawHistory?.current?.length > 0)
         historyPointer.current -= 1;
       if (
         historyPointer.current < drawHistory.current.length - 1 &&
-        actionMenuItem === MENU_ITEMS.REDO
+        actionMenuItem === MENU_ITEMS.REDO && drawHistory?.current?.length > 0
       )
         historyPointer.current += 1;
       const imageData = drawHistory.current[historyPointer.current];
-      context.putImageData(imageData, 0, 0);
+      drawHistory?.current?.length > 0 ?  context.putImageData(imageData, 0, 0) : null
     }
      else if (actionMenuItem === MENU_ITEMS.DELETE){
+      drawHistory.current = []
       context.clearRect(0, 0, canvas.width, canvas.height);
     }
 
